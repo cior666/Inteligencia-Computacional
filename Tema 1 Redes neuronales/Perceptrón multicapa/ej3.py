@@ -225,6 +225,7 @@ def Ejercicio3(capas, ruta_train, ruta_test, vel_aprendizaje, max_epocas, err_um
     print(f"Aciertos: {aciertos}/{n_patrones} ({aciertos/n_patrones*100:.2f}%)")
 
     return w, historial_error, historial_error_clasif  # Devolvemos los pesos finales de la red
+np.random.seed(42)
 
 arquitecturas = [[4, 3, 3], [4, 5, 3], [4, 8, 3], [4, 5, 5, 3]]
 

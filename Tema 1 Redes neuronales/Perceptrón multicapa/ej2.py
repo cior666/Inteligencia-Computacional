@@ -203,7 +203,7 @@ def Ejercicio2(capas, ruta_train, ruta_test, vel_aprendizaje, max_epocas, err_um
     print(f"Aciertos: {aciertos}/{n_patrones} ({aciertos/n_patrones*100:.2f}%)")
 
     return w  # Devolvemos los pesos finales de la red
-
+np.random.seed(42)
 w = Ejercicio2([2,3,3,1], ubi_train, ubi_test, 0.01, 3000, 0.05, sigmoide)
 
 print("Pesos finales:")
