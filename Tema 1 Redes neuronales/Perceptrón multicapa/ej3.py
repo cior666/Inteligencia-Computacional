@@ -215,7 +215,7 @@ def Ejercicio3(capas, ruta_train, ruta_test, vel_aprendizaje, max_epocas, err_um
 
         print(f"Época {epoca}: xi = {error_epoca}, error_clasif = {historial_error_clasif[-1]:.3f}")
 
-        if tasa_aciertos >= 1.0 or error_epoca < err_umbral:
+        if tasa_aciertos >= 0.99 or error_epoca < err_umbral:
             print(f"Convergencia alcanzada en la época {epoca}. Error: {error_epoca}")
             break
     else:
@@ -229,7 +229,7 @@ def Ejercicio3(capas, ruta_train, ruta_test, vel_aprendizaje, max_epocas, err_um
 arquitecturas = [[4, 3, 3], [4, 5, 3], [4, 8, 3], [4, 5, 5, 3]]
 
 for capas in arquitecturas:
-    w, hist_xi, hist_err = Ejercicio3(capas, 'iris81_trn.csv', 'iris81_tst.csv', 0.1, 3000, 0.05, sigmoide)
+    w, hist_xi, hist_err = Ejercicio3(capas, 'iris81_trn.csv', 'iris81_tst.csv', 0.1, 3000, 0.01, sigmoide)
 
     print(f"Pesos finales ({capas}):")
     for i, wp in enumerate(w):
