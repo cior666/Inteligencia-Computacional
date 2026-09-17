@@ -68,50 +68,32 @@ valores_silhouette = []
 #si es cercano a 0 el patron esta en una zona de separacion de clusters
 #si es menor q 0 deberia de ser asignado a otro cluster 
 
-
 for k in valores_k:
-
     # entrenamos k-medias con el valor de k actual
     centroides, grupos = k_medias(datos, k)
-
     # calculamos la metrica silhouette
     valor = silhouette_score(
         datos,
         grupos
     )
-
     # guardamos el resultado
     valores_silhouette.append(valor)
-
     print(
         "k =", k,
         "-> silhouette =", valor
     )
 
-
-# --------------------------------------------------
 # buscar el k optimo
-# --------------------------------------------------
-
 # buscamos la posicion donde esta el mayor silhouette
 indice_mejor = np.argmax(valores_silhouette)
-
 # obtenemos el valor de k correspondiente
 k_optimo = list(valores_k)[indice_mejor]
-
 # obtenemos el mejor valor de silhouette
 mejor_silhouette = valores_silhouette[indice_mejor]
-
-
 print("\nresultado:")
 print("k optimo:", k_optimo)
 print("mejor silhouette:", mejor_silhouette)
-
-
-# --------------------------------------------------
 # graficar los resultados
-# --------------------------------------------------
-
 plt.figure(figsize=(7, 5))
 
 plt.plot(
