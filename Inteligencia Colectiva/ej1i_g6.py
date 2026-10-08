@@ -203,11 +203,7 @@ for generacion in range(max_generaciones):
     historial_promedio.append(fitness_promedio)
     historial_peor.append(fitness_peor)
 
-
-   
     # medir velocidad de convergencia
-   
-
     # comprobamos si el mejor individuo de esta generacion alcanzo el mismo nivel de calidad q utilizaremos
     # para comparar con pso
 
@@ -240,9 +236,7 @@ for generacion in range(max_generaciones):
     #
     #     break
 
-
     # elitismo
-
     # guardamos el mejor individuo para asegurarnos
     # de q no se pierda en la siguiente generacion
     elitista = poblacion[indice_mejor].copy()
